@@ -1,6 +1,7 @@
 {
   "hosting": {
-    "public": "y",
+    "site":"qrcodeagd",
+    "public": "build",
     "ignore": [
       "firebase.json",
       "**/.*",
