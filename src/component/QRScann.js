@@ -102,7 +102,7 @@ export const QRScann = () => {
                           <h3 
                             className= "titulos" 
                           >
-                              Resultado de la WebCam -  {scanResultWebCam}</h3>
+                              Resultado WebCam -  {scanResultWebCam}</h3>
                           <Button
                             variant="contained"
                             color="primary"
