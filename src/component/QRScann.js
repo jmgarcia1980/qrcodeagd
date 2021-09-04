@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import {Container, Card, CardContent, makeStyles, Grid, Button} from '@material-ui/core';
-import Icon from '@material-ui/core/Icon';
+// import Icon from '@material-ui/core/Icon';
 
 import '../App.css';
 import QrReader from 'react-qr-reader';
@@ -29,7 +29,7 @@ const useStyles = makeStyles((theme) => ({
       // background: '#fb61bb',
       color: '#fff',
       padding: 10,
-      width: '100%',
+      width: '80%',
       height: '80%',
       fontSize: `calc(6px + 2vmin)`
       // width: `calc(40% - ${100}px)`
@@ -46,8 +46,12 @@ const useStyles = makeStyles((theme) => ({
   },
   btn : {
     marginTop: 10,
-    marginBottom: 20
+    marginBottom: 20,
+    background: '#3f9db5',
+    fontSize: `calc(1px + 2vmin)`,
+    width: '60%'
   }
+
 }));
 
 
@@ -71,11 +75,6 @@ export const QRScann = () => {
 
     //https://www.npmjs.com/package/react-qr-scanner
     // document.screen ("Su resolución es de: " + screen.height + "x" + screen.width);
-    // 
-    // const myStyle = {
-    //     width: '90%',
-    //     height: '90%'
-    // }
 
     return (
       <Container className={classes.conatiner}>
@@ -106,11 +105,11 @@ export const QRScann = () => {
                           <Button
                             variant="contained"
                             color="primary"
-                            className={classes.button}
-                            endIcon={<Icon>send</Icon>}
+                            className={classes.btn}
+                            // endIcon={<Icon>send</Icon>}
                             onClick= { handleClickSend }
                           >
-                            Ejecutar
+                            Ejecutar resultado
                           </Button>
 
                         </Grid>

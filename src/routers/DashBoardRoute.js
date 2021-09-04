@@ -4,7 +4,7 @@ import { Switch, Router, Redirect } from 'react-router-dom'
 import { QRScann } from '../component/QRScann'
 import { GeneraQRCode } from '../component/GeneraQRCode'
 
-//import { createBrowserHistory } from "history";
+// import { createBrowserHistory } from "history";
 
 export const DashBoardRoute = () => {
 

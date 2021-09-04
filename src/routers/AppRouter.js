@@ -14,13 +14,13 @@ export const AppRouter = () => {
         <Router>
             <div>
                 <Switch>
-                        <Route exact path ="/qr" component ={ QRScann } />
-                        <Route exact path ="/genera" component ={ GeneraQRCode } />
-                        
-                        <Route path ="/" component ={ DashBoardRoute } />
-                        
-                        <Redirect to="/" />
-                    </Switch>
+                    <Route exact path ="/qr" component ={ QRScann } />
+                    <Route exact path ="/genera" component ={ GeneraQRCode } />
+                    
+                    <Route path ="/" component ={ DashBoardRoute } />
+                    
+                    <Redirect to="/" />
+                </Switch>
             </div>
         </Router>
     )
