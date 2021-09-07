@@ -5,6 +5,7 @@ import {Container, Card, CardContent, makeStyles, Grid, Button} from '@material-
 import '../App.css';
 import QrReader from 'react-qr-reader';
 import { Link } from 'react-router-dom';
+// import { LinkQR } from './LinkQR';
 // import { Propiedades } from './ui/Propiedades';
 
 
@@ -46,7 +47,7 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 
-export const QRScann = () => {
+export const QRScann = ( { history }) => {
 
     const [scanResultWebCam, setScanResultWebCam] =  useState('');
     const classes = useStyles();
@@ -60,12 +61,15 @@ export const QRScann = () => {
       }
     }
 
-    const handleClickSend =()=>{
-      console.log('paso', scanResultWebCam)
-    }
-
-    //https://www.npmjs.com/package/react-qr-scanner
-    // document.screen ("Su resolución es de: " + screen.height + "x" + screen.width);
+    const handleReturn =() =>{
+      console.log(history.length);
+      if (history.length <=1){
+          history.push("/");
+      }else{
+          history.goBack();
+      }
+      
+  }
 
     return (
       <Container className={classes.conatiner}>
@@ -95,16 +99,29 @@ export const QRScann = () => {
                         <h3 
                             className= "titulos" 
                           >
-                              Resultado WebCam -  {scanResultWebCam}</h3>
-                          <Button
-                            variant="contained"
-                            color="primary"
-                            className={classes.btn}
-                            // endIcon={<Icon>send</Icon>}
-                            onClick= { handleClickSend }
-                          >
-                            Ejecutar resultado
-                          </Button>
+                              Resultado WebCam:
+                        </h3>
+
+                        <br></br>
+
+                        <a
+                          href= { scanResultWebCam } 
+                          target="blank"
+                        >
+                            { scanResultWebCam } 
+                        </a> 
+
+                        <br></br>
+
+                        <Button
+                          variant="contained"
+                          color="primary"
+                          className={classes.btn}
+                          // endIcon={<Icon>send</Icon>}
+                          onClick= { handleReturn }
+                        >
+                          Volver
+                        </Button>
 
                     </Grid>
                 </CardContent>
